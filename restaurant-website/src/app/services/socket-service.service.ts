@@ -13,17 +13,17 @@ export class SocketService {
   foodArray: Food[] = [
     {
       id: '4d2da93389ce48aa8841c56891494942',
-      body: 'yam chips with fried pork',
+      body: 'yam chips with fried chicken',
       image: '../../assets/yamChicken.jpeg',
-      alt: 'yam chips with fried pork',
-      price: '35.00',
+      alt: 'yam chips with fried chicken',
+      price: '30.00',
     },
     {
       id: 'c92a574c98634a70998b71d110f51fd5',
-      body: 'yam chips with fried chicken',
+      body: 'yam chips with fried pork',
       image: '../../assets/yarmPork.jpeg',
       alt: 'yam chips with fried chicken',
-      price: '30.00',
+      price: '35.00',
     },
     {
       id: '33cc84aebc4b49b9bdc181782680c493',
