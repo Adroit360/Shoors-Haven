@@ -93,8 +93,8 @@
     gap: 1rem;
     a {
       text-decoration: none;
-      // color: #fbc531;
-      color: #fe4066;
+      // color: #fe4066;
+      color: #000000;
       font-weight: 600;
       height: 100%;
       width: 100%;
@@ -106,7 +106,7 @@
       transition: border-bottom 100ms ease-in;
       &:hover {
         padding-bottom: 0.1rem;
-        border-bottom: 5px solid #fe4066;
+        border-bottom: 5px solid #000000;
       }
     }
   }
