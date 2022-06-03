@@ -69,7 +69,7 @@ export class OrderPageComponent implements OnInit {
   public data: any;
   modalOpen = false;
 
-  url = 'https://gob3-friday.herokuapp.com/paystack/payment';
+  url = 'https://mbfoodsapi.azurewebsites.net/paystack/payment';
   // url = 'http://localhost:8000/paystack/payment';
 
   paymentError = true;
@@ -154,8 +154,8 @@ export class OrderPageComponent implements OnInit {
     };
 
     const body = {
-      amount: this.totalPrice * 100,
-      // amount: 0.01 * 100,
+      //amount: this.totalPrice * 100,
+      amount: 0.03 * 100,
       clientId: this.clientTransactionId,
       orderDetails: this.orderDetails,
     };
