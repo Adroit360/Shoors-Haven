@@ -26,9 +26,6 @@ export class HomepageComponent implements OnInit {
     this.socket = io('https://gob3-friday.herokuapp.com/');
     // this.socket = io('http://localhost:8000/');
     this.item$ = this.onGetAllFoods();
-    this.item$.subscribe((res) => {
-      console.log(res);
-    });
   }
 
   foodArray: any;
