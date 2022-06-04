@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import { Observable, Subscription, tap } from 'rxjs';
-import { OrderDetailsAdmin } from '../models/interface';
+import { FirebaseFood, OrderDetailsAdmin } from '../models/interface';
 import { OrderType } from '../single-order/single-order.component';
 
 interface Order {
@@ -20,6 +20,7 @@ interface Order {
 })
 export class DisplayPageComponent implements OnInit {
   item$: Observable<OrderDetailsAdmin[]>;
+  food$: Observable<FirebaseFood[]>;
   OrderType = OrderType;
   notificationAudio = new Audio('../../assets/Short-notification-sound.mp3');
   isFirstTime = true;
@@ -27,6 +28,7 @@ export class DisplayPageComponent implements OnInit {
   subscriptions: Subscription[] = [];
   constructor(private firestore: AngularFirestore) {
     this.item$ = this.exampleGetCollection();
+    this.food$ = this.onGetAllFoods();
     let itemSubs = this.item$.subscribe((res) => {
       if (!this.isFirstTime && res.length > this.itemLength)
         this.notificationAudio.play();
@@ -82,5 +84,12 @@ export class DisplayPageComponent implements OnInit {
 
   deleteOrder(id: string): Promise<void> {
     return this.firestore.collection('orders').doc(id).delete();
+  }
+  onGetAllFoods(): Observable<any> {
+    return this.firestore
+      .collection('menu', (food) =>
+        food.where('body', '!=', 'Banku with grilled tilapia')
+      )
+      .valueChanges({ idField: 'id' });
   }
 }

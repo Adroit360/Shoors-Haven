@@ -31,6 +31,7 @@ export interface FirebaseFood {
   body: string;
   image: string;
   price: string;
+  status: boolean;
 }
 
 export interface OrderDetails {

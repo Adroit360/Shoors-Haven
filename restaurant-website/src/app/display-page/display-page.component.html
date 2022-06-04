@@ -1,18 +1,23 @@
 <main class="display__container">
-  <div class="food_card">
-    <div class="food__status">
-      <p>available</p>
-      <!-- <p>not available</p> -->
-    </div>
-    <div class="food_card__details">
-      <div class="food_card__header__title">
-        <p>Banku with tilapia</p>
+  <div class="food-container">
+    <div class="food_card" *ngFor="let item of food$ | async">
+      <div
+        class="food__status"
+        [ngStyle]="{ 'background-color': item.status ? '#00b83e' : '#fe4066' }"
+      >
+        <p *ngIf="item.status === true">available</p>
+        <!-- <p>not available</p> -->
       </div>
+      <div class="food_card__details">
+        <div class="food_card__header__title">
+          <p>{{ item.body }}</p>
+        </div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" checked />
+        <span class="slider round"></span>
+      </label>
     </div>
-    <label class="switch">
-      <input type="checkbox" checked />
-      <span class="slider round"></span>
-    </label>
   </div>
   <h1 class="title">Orders</h1>
   <div class="display__container__items">
