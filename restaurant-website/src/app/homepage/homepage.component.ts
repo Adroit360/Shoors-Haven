@@ -32,6 +32,7 @@ export class HomepageComponent implements OnInit {
   closingTime: string = '';
   currentTime: string = '';
   public orderStatus: boolean = false;
+  loading: boolean = true;
   breakTime: { closingTime: string; openingTime: string } = {
     closingTime: '',
     openingTime: '',
