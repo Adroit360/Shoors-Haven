@@ -26,6 +26,12 @@ export interface Food {
   alt: string;
   price: string;
 }
+export interface FirebaseFood {
+  id: string;
+  body: string;
+  image: string;
+  price: string;
+}
 
 export interface OrderDetails {
   date: string;
@@ -40,7 +46,7 @@ export interface OrderDetails {
   deliveryFee: number;
   priceOfFood: string;
   orderPaid: boolean;
-  numberOfPacks: {[key: string]: number};
+  numberOfPacks: { [key: string]: number };
 }
 
 export interface OrderDetailsAdmin {
@@ -54,7 +60,7 @@ export interface OrderDetailsAdmin {
   note?: string;
   completed: boolean;
   Id: string;
-  numberOfPacks: {[key: string]: number}[];
+  numberOfPacks: { [key: string]: number }[];
   deliveryFee: number;
   priceOfFood: string;
   orderPaid: boolean;
