@@ -169,7 +169,8 @@ input:checked + .slider:before {
   background-color: white;
   border-radius: 8px;
   padding: 0.5rem;
-  width: fit-content;
+  width: 5rem;
+  font-size: 0.8rem;
   display: flex;
   justify-content: center;
   gap: 0.5rem;
@@ -182,7 +183,6 @@ input:checked + .slider:before {
     width: fit-content;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    background-color: #fe4066;
     color: white;
   }
 }
