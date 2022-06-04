@@ -1,3 +1,4 @@
+import { Firestore } from '@angular/fire/firestore';
 import { SocketService } from './../services/socket-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -5,6 +6,7 @@ import { io } from 'socket.io-client';
 import { Observable, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FirebaseFood } from '../models/interface';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-homepage',
@@ -18,7 +20,8 @@ export class HomepageComponent implements OnInit {
   constructor(
     private router: Router,
     private socketService: SocketService,
-    private http: HttpClient
+    private http: HttpClient,
+    private fireStore: AngularFirestore
   ) {
     this.socket = io('https://gob3-friday.herokuapp.com/');
     // this.socket = io('http://localhost:8000/');
