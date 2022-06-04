@@ -137,7 +137,7 @@
   width: 15px;
   left: 0px;
   bottom: 0px;
-  background-color: white;
+  background-color: #fe4066;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -163,4 +163,26 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.food_card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  p {
+    margin: 0;
+  }
+  .food__status {
+    font-size: 0.5rem;
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background-color: #fe4066;
+    color: white;
+  }
 }
