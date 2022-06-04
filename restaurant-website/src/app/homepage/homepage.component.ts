@@ -106,6 +106,6 @@ export class HomepageComponent implements OnInit {
   }
 
   onGetAllFoods(): Observable<any> {
-    return this.firestore.collection('menu').valueChanges({ idField: 'id' });
+    return this.fireStore.collection('menu').valueChanges({ idField: 'id' });
   }
 }
