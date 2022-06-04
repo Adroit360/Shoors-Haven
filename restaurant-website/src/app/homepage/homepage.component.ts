@@ -43,24 +43,6 @@ export class HomepageComponent implements OnInit {
   subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
-    // this.breakTime = this.socketService.getClosingTime();
-    // this.http
-    //   .get('https://gob3-friday.herokuapp.com/')
-    //   .subscribe((res: any) => {
-    //     this.orderStatus = res.orderStatus;
-    //     const currentDate = new Date();
-    //     const currentTime = currentDate.toString().split(' ')[4].toString();
-    //     if (
-    //       currentTime < this.breakTime.openingTime ||
-    //       currentTime > this.breakTime.closingTime ||
-    //       this.orderStatus
-    //     ) {
-    //       this.closingTimeError = true;
-    //     } else {
-    //       this.closingTimeError = false;
-    //     }
-    //   });
-
     this.http
       .get('https://gob3-friday.herokuapp.com/')
       .subscribe((res: any) => {
