@@ -43,7 +43,7 @@ export class OrderPageComponent implements OnInit {
     private route: ActivatedRoute,
     public domSanitizer: DomSanitizer
   ) {
-    this.socket = io('https://gob3-friday.herokuapp.com/');
+    this.socket = io('https://mbfoodsapi.azurewebsites.net/');
     // this.socket = io('http://localhost:8000/');
     this.foodArray = this.socketService.getAllFoods();
   }
