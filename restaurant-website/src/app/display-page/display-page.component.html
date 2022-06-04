@@ -5,8 +5,8 @@
         class="food__status"
         [ngStyle]="{ 'background-color': item.status ? '#00b83e' : '#fe4066' }"
       >
-        <p *ngIf="item.status === true">available</p>
-        <!-- <p>not available</p> -->
+        <p *ngIf="item.status">available</p>
+        <p *ngIf="!item.status">not available</p>
       </div>
       <div class="food_card__details">
         <div class="food_card__header__title">
@@ -14,7 +14,11 @@
         </div>
       </div>
       <label class="switch">
-        <input type="checkbox" checked />
+        <input
+          type="checkbox"
+          [checked]="item.status"
+          (change)="onCheckboxChange(item.id, $event)"
+        />
         <span class="slider round"></span>
       </label>
     </div>

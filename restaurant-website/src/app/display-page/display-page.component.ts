@@ -92,4 +92,13 @@ export class DisplayPageComponent implements OnInit {
       )
       .valueChanges({ idField: 'id' });
   }
+
+  onUpdateFoodStatus(id: string, data: { status: boolean }): void {
+    this.firestore.collection('menu').doc(id).update(data);
+  }
+
+  onCheckboxChange(id: string, event: Event): void {
+    const isChecked = (<HTMLInputElement>event.target).checked;
+    this.onUpdateFoodStatus(id, { status: isChecked });
+  }
 }
