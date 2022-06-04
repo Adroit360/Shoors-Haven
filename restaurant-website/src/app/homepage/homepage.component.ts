@@ -26,7 +26,7 @@ export class HomepageComponent implements OnInit {
     this.socket = io('https://gob3-friday.herokuapp.com/');
     // this.socket = io('http://localhost:8000/');
     this.item$ = this.onGetAllFoods();
-    this.item$.subscribe((res: any) => {
+    this.item$.subscribe((res) => {
       console.log(res);
     });
   }
@@ -84,19 +84,7 @@ export class HomepageComponent implements OnInit {
     this.foodArray = this.socketService.getAllFoods();
   }
 
-  onProceedToOrderPage(id: number): void {
-    // const currentDate = new Date();
-    // const currentTime = currentDate.toString().split(' ')[4].toString();
-    // if (
-    //   currentTime < this.breakTime.openingTime ||
-    //   currentTime > this.breakTime.closingTime ||
-    //   this.orderStatus
-    // ) {
-    //   this.closingTimeError = true;
-    // } else {
-    //   this.closingTimeError = false;
-    //   this.router.navigate(['/orders', id]);
-    // }
+  onProceedToOrderPage(id: string): void {
     if (this.orderStatus) {
       this.closingTimeError = true;
     } else {
@@ -106,6 +94,8 @@ export class HomepageComponent implements OnInit {
   }
 
   onGetAllFoods(): Observable<any> {
-    return this.fireStore.collection('menu').valueChanges({ idField: 'id' });
+    return this.fireStore
+      .collection('menu', (food) => food.where('status', '==', true))
+      .valueChanges({ idField: 'id' });
   }
 }

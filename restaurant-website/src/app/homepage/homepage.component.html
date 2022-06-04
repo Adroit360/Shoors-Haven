@@ -35,9 +35,9 @@
   <div class="body__menu" id="menu">
     <h1 class="menu__heading">Our Menu</h1>
     <div class="menu__container">
-      <div class="menu__meal__card" *ngFor="let item of foodArray.slice(0, 9)">
+      <div class="menu__meal__card" *ngFor="let item of item$ | async">
         <div class="card__image">
-          <img src="{{ item.image }}" alt="{{ item.alt }}" />
+          <img src="{{ item.image }}" alt="{{ item.body }}" />
         </div>
         <div class="card__body">{{ item.body }}</div>
         <div class="card__price">
