@@ -34,8 +34,8 @@
   </div>
   <div class="body__menu" id="menu">
     <h1 class="menu__heading">Our Menu</h1>
-    <div class="loader" *ngIf="loading"></div>
-    <div class="menu__container" *ngIf="!loading">
+    <div class="loader" *ngIf="(item$ | async) === null"></div>
+    <div class="menu__container" *ngIf="(item$ | async) !== null">
       <div class="menu__meal__card" *ngFor="let item of item$ | async">
         <div class="card__image">
           <img src="{{ item.image }}" alt="{{ item.body }}" />
