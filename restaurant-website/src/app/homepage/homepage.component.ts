@@ -26,6 +26,7 @@ export class HomepageComponent implements OnInit {
     this.socket = io('https://mbfoodsapi.azurewebsites.net/');
     // this.socket = io('http://localhost:8000/');
     this.item$ = this.onGetAllFoods();
+    this.item$.subscribe((res) => this.socketService.setFoodArray(res));
   }
 
   foodArray: any;
