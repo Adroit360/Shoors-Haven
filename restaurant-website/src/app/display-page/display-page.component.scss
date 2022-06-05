@@ -125,7 +125,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(186, 191, 199);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -133,11 +133,11 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 15px;
-  width: 15px;
-  left: 0px;
-  bottom: 0px;
-  background-color: #fe4066;
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 1.2px;
+  background-color: #ffffff;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
