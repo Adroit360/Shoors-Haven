@@ -186,8 +186,8 @@ export class OrderPageComponent implements OnInit {
 
     this.loading = true;
     const body = {
-      // amount: this.totalPrice * 100,
-      amount: 0.01 * 100,
+      amount: this.totalPrice * 100,
+      // amount: 0.01 * 100,
       clientId: this.clientTransactionId,
       orderDetails: this.orderDetails,
     };
