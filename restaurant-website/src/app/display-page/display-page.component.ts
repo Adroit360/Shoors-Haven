@@ -86,11 +86,7 @@ export class DisplayPageComponent implements OnInit {
     return this.firestore.collection('orders').doc(id).delete();
   }
   onGetAllFoods(): Observable<any> {
-    return this.firestore
-      .collection('menu', (food) =>
-        food.where('body', '!=', 'Banku with grilled tilapia')
-      )
-      .valueChanges({ idField: 'id' });
+    return this.firestore.collection('menu').valueChanges({ idField: 'id' });
   }
 
   onUpdateFoodStatus(id: string, data: { status: boolean }): void {
